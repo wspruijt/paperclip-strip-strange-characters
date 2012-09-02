@@ -42,6 +42,8 @@ model. Currently there's no way to define callback for selected attachments.
    => "its-coffee-time" 
   1.9.3-p194 :003 > "ABCD_EFGH".strip_strange_characters
    => "abcd-efgh" 
+  1.9.3-p194 :004 > "///".strip_strange_characters
+   => "884a6325c5f164f3cc6d5f97bd3e3231" 
 
 = Installation
 
