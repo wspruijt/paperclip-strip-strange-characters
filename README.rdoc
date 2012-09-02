@@ -27,7 +27,7 @@ Here comes a quick code sample. Currently no docs.
 === Paperclip
 
   class Person < ActiveRecord::Base
-    has_attachment :photo
+    has_attached_file :photo
     before_post_process :strip_strange_characters_from_attachments
   end
   
