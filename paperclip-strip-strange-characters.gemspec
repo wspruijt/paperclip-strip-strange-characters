@@ -1,5 +1,4 @@
 $LOAD_PATH.unshift 'lib'
-require "paperclip-strip-strange-characters/version"
 
 Gem::Specification.new do |s|
   s.name              = "paperclip-strip-strange-characters"
