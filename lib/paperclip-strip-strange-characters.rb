@@ -5,9 +5,11 @@ class String
   def strip_strange_characters(ignore = true, hash = true)
     # Escape str by transliterating to UTF-8 with Iconv
     if ignore
-      s = Iconv.iconv('ascii//ignore//translit', 'utf-8', self).to_s
+      # s = Iconv.iconv('ascii//ignore//translit', 'utf-8', self).to_s
+      s = s.gsub(/[\x80-\xff]/,"")
     else
-      s = Iconv.iconv('ascii//translit', 'utf-8', self).to_s
+      #s = Iconv.iconv('ascii//translit', 'utf-8', self).to_s
+      s = s.gsub(/[\x80-\xff]/,"")
     end
     
     # Downcase string
