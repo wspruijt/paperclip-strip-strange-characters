@@ -3,7 +3,7 @@ require "paperclip-strip-strange-characters/version"
 
 Gem::Specification.new do |s|
   s.name              = "paperclip-strip-strange-characters"
-  s.version           = Paperclip-strip-strange-characters::VERSION
+  s.version           = '0.0.1'
   s.date              = Time.now.strftime('%Y-%m-%d')
   s.summary           = "Strip strange characters from Paperclip upload"
   s.homepage          = "http://github.com/wspruijt/paperclip-strip-strange-characters"
