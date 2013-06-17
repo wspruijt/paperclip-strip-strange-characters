@@ -1,16 +1,11 @@
+# encoding: utf-8
 require 'iconv'
 require 'digest/md5'
 
 class String
-  def strip_strange_characters(ignore = true, hash = true)
+  def strip_strange_characters(hash = true)
     # Escape str by transliterating to UTF-8 with Iconv
-    if ignore
-      # s = Iconv.iconv('ascii//ignore//translit', 'utf-8', self).to_s
-      s = s.gsub(/[\x80-\xff]/,"")
-    else
-      #s = Iconv.iconv('ascii//translit', 'utf-8', self).to_s
-      s = s.gsub(/[\x80-\xff]/,"")
-    end
+    s = self.delete!("^\u{0000}-\u{007F}")
     
     # Downcase string
     s.downcase!
