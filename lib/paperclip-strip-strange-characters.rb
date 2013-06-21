@@ -25,7 +25,7 @@ class String
     # Replace groups of spaces with single hyphen
     self.gsub!(/\ +/, '-')
     
-    if hash and seld == ""
+    if hash and self == ""
       return Digest::MD5.hexdigest(self) # Fallback - better MD5 than nothing
     end
 
