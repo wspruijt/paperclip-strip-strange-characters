@@ -5,31 +5,31 @@ require 'digest/md5'
 class String
   def strip_strange_characters(hash = true)
     # Escape str by transliterating to UTF-8 with Iconv
-    s = self.delete!("^\u{0000}-\u{007F}")
+    self.delete!("^\u{0000}-\u{007F}")
     
     # Downcase string
-    s.downcase!
+    self.downcase!
 
     # Remove apostrophes so isn't changes to isnt
-    s.gsub!("'", '')
+    self.gsub!("'", '')
 
     # Remove quotes 
-    s.gsub!("\"", '')
+    self.gsub!("\"", '')
 
     # Replace any non-letter or non-number character with a space
-    s.gsub!(/[^A-Za-z0-9]+/, ' ')
+    self.gsub!(/[^A-Za-z0-9]+/, ' ')
 
     # Remove spaces from beginning and end of string
-    s.strip!
+    self.strip!
 
     # Replace groups of spaces with single hyphen
-    s.gsub!(/\ +/, '-')
+    self.gsub!(/\ +/, '-')
     
-    if hash and s == ""
+    if hash and seld == ""
       return Digest::MD5.hexdigest(self) # Fallback - better MD5 than nothing
     end
 
-    return s
+    return self
   end
 end  
 
