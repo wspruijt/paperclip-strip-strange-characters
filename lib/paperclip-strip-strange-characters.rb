@@ -1,5 +1,4 @@
 # encoding: utf-8
-require 'iconv'
 require 'digest/md5'
 
 class String
